@@ -78,6 +78,6 @@ We are still sending the exploit through the localhost, but it will look like we
  - Anywhere that you can access
    a host, setup the host, and make sure the target device is trusted
 
-## Diagram for RCE V2.1 PoC True-True Vulnerability
+## Diagram for RCE V2.1 PoC True-Trust Vulnerability
 ![iOS 15.0.2 RCE V2](https://i.postimg.cc/Hk7PwWJJ/RCE-v2-1.jpg)
 
