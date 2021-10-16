@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Jonathan Scott</title>
+		<meta charset="utf-8" />
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-cordova/0.1.27-alpha/ng-cordova.js"></script>
+
+                    <script type="text/javascript" src="js/index.js"></script>
+
+<style>
+      #wsresults {
+        background-color: transparent;
+				color: #ffffff !important;
+          color: green !important;
+          margin-top:15px
+
+      }
+
+    </style>
+
+	</head>
+	<body id="top" >
+
+		<!-- Header -->
+
+			<header id="header">
+				<div class="content">
+                    <h1><img src="images/logo.png" height="150px" width="150px"></h1>
+					<h1><a href="#">Jonathan Scott</a></h1>
+					<p>RCE V2.1 PoC iOS 15.0.2<br />
+					Developed by <a href="0hak.com">Jonathan Scott</a></p>
+					
+				</div>
+				
+			</header>
+		<!-- Footer -->
+			<footer id="footer">
+				 <a href="#" id="11"><img src="https://i.postimg.cc/zBFsT2Ry/puppy.png"></a>
+				<p class="copyright">&copy; ®2021 Jonathan Scott <a href="http://www.0hak.com">0hak.com</a></p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+
+                        <!--</div>-->
+
+
+
+<script>
+	
+
+    //https://github.com/joewalnes/websocketd
+    //https://github.com/joewalnes/websocketd/wiki/Websocketd-on-Raspberry-Pi
+    //var ws = new WebSocket('ws://localhost:8080/');
+    var ws = new WebSocket('ws://0x.local:8081');
+
+    ws.onopen = function() {
+        document.body.style.backgroundColor = '#cfc';
+    };
+    ws.onclose = function() {
+        document.body.style.backgroundColor = null;
+    };
+    ws.onerror = function(evt) {
+        $('#wsresults').html('Error: '+event.data);
+    };
+    ws.onmessage = function(event) {
+        $('#wsresults').html(event.data);
+    };
+
+
+    $(document).ready(function() {
+
+        $('#11').on('click', function(e){
+            if (ws) {
+                try {
+                        ws.send('factory_reset');
+                } catch (ex) {
+                        alert('Cannot send: '+ex);
+                }
+            }
+        });
+    });
+	
+	
+   </script>
+
+
+	</body>
+</html>
