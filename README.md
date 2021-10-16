@@ -41,6 +41,8 @@ Ngrok is going to forward your localhost websocket to a URL that can be pulled u
 
 We are still sending the exploit through the localhost, but it will look like we are sending it from a secured website. https://jonathanscott.ngrok.io
 
+NOTE: Airdrop must be set to accept from "Everyone" on the target device
+
 ## Running the exploit
 
 1. Plugin the target phone (iPhone 13 Pro iOS 15.0.2) into your Macbook Pro via usb
